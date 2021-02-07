@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="Runner1" Id="{7ccb4ed9-b705-47d0-b960-71468cf9dfb7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Runner1
+VAR
+    usesFoo : UsesFoo1;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[usesFoo();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="UsesFoo3" Id="{b2998b2d-2b7b-4b8e-ac66-f474332a81f0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK UsesFoo3
+VAR
+    _foo : REFERENCE TO Foo;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[_foo();
+]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{32f0664b-0ffa-40c7-8cf8-d226260a5102}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+    foo : REFERENCE TO Foo;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_foo REF= foo;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

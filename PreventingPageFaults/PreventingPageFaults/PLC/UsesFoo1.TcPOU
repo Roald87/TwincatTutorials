@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="UsesFoo1" Id="{cdaa2c9d-67d7-4a5a-880f-8b044bb4e31c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK UsesFoo1
+VAR_INPUT
+    foo : REFERENCE TO Foo;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF __ISVALIDREF(foo) THEN
+    foo();
+END_IF	
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="UsesFoo2" Id="{9add212c-6b27-4bca-843b-6c3edd1a908b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK UsesFoo2
+VAR_IN_OUT
+    foo : Foo;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[foo();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

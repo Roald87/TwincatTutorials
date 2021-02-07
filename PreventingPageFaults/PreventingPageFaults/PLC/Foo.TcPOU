@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="Foo" Id="{d933c360-a8c5-4fa1-a388-adc180a481d2}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Foo
+VAR
+    Counter : UINT := 0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Counter := Counter + 1;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
