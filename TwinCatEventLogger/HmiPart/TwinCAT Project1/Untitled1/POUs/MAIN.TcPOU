@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="MAIN" Id="{9ae84a09-de24-4b52-a2ed-2baa5985f4b1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SendMessage();
+ConfirmableAlarmWithArguments();
+AlarmWithCustomSourceInfo();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

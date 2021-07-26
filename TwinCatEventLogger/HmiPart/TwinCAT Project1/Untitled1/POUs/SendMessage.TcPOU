@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="SendMessage" Id="{06e84c44-61c3-4613-a1fc-ac00ced37fcb}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM SendMessage
+VAR
+    bIsInitalized : BOOL;
+    fbMessage : FB_TcMessage;
+    bSendMessage : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bIsInitalized THEN
+    bIsInitalized := TRUE;
+    fbMessage.CreateEx(TC_Events.MyEvents.Start, 0);
+END_IF
+
+IF bSendMessage THEN
+    bSendMessage := FALSE;
+    fbMessage.Send(0);
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

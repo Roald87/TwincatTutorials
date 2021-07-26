@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="ConfirmableAlarmWithArguments" Id="{df769fb6-64ea-4d28-929a-dc67a3dfc7ea}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM ConfirmableAlarmWithArguments
+VAR
+    bIsInitalized : BOOL;
+    
+    fbAlarm : FB_TcAlarm;
+    bRaiseAlarm : BOOL;
+    bClearAlarm : BOOL;
+    bConfirmAlarm : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bIsInitalized THEN
+	bIsInitalized := TRUE;
+	fbAlarm.CreateEx(TC_Events.MyEvents.Stop, TRUE, 0);	
+END_IF
+
+IF bRaiseAlarm THEN
+	bRaiseAlarm := FALSE;
+	fbAlarm.ipArguments.Clear().AddString('Alice');
+	fbAlarm.Raise(0);
+END_IF
+
+IF bConfirmAlarm THEN
+	bConfirmAlarm := FALSE;
+	fbAlarm.Confirm(0);
+END_IF
+
+IF bClearAlarm THEN
+	bClearAlarm := FALSE;
+	fbAlarm.Clear(0, FALSE);
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
