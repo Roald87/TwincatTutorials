@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="StateMachine" Id="{b4660db1-0d8d-4b58-8120-361e2497a6aa}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK StateMachine
+VAR_INPUT
+    _command : Command;
+END_VAR
+VAR_OUTPUT
+    _state : State;
+END_VAR
+VAR
+    _stateName : STRING;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[_stateName := TO_STRING(_state);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

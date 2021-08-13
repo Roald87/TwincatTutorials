@@ -1,0 +1,33 @@
+﻿/**
+        About font inclusion in TcHmi
+
+    As a default we include Roboto Condensed (in Fonts folder) as a webfont which will render latin, greek, vietnamese, cyrillic glyphs.
+
+    If Roboto does not render the glyphs we use some preinstalled fallback
+    'Microsoft YaHei' (Windows), 'Hiragino Sans GB' (macOS/iOS), 'Noto Sans CJK SC/TC' (Android), 'WenQuanYi Micro Hei' (Linux) renders chinese
+    'Meiryo' (Windows), 'Hiragino Kaku Gothic Pro' (macOS/iOS), 'Noto Sans CJK JP' (Android) renders japanese
+
+    For other fonts you can add the woff files into the TcHmi project and 
+    add a @font-face section yourself.
+    The noto family from Google tries to cover all of the world, is free to use and fits nicely with Roboto
+    see https://www.google.com/get/noto/ and https://fonts.google.com/earlyaccess 
+
+    The font usage is defined in the main CSS file of the active theme (for example Themes/Base/Style.css).
+*/
+
+html {
+    font-family:RobotoCondensed,
+        'Microsoft YaHei', '微软雅黑', 
+        'Hiragino Sans GB', '冬青黑体',
+        'STXihei', '华文细黑', 
+        'WenQuanYi Micro Hei',
+        'Meiryo', 'メイリオ', 
+        'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ ProN',
+        'Noto Sans CJK SC', 'Noto Sans CJK TC', 'Noto Sans CJK JP', 'Noto Sans CJK KR',
+
+        sans-serif
+        ;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+}

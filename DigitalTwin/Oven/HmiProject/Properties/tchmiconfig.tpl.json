@@ -1,0 +1,62 @@
+﻿{
+  "$schema": "C:/TwinCAT/Functions/TE2000-HMI-Engineering/Infrastructure/TcHmiFramework/Latest/Schema/TchmiConfig.Schema.json",
+  "basePath": "./Libraries",
+  "locale": "client",
+  "scaleMode": "None",
+  "startupView": "Desktop.view",
+  "loginPage": null,
+  "tcHmiServer": {
+    "websocketIntervalTime": 500,
+    "websocketTimeout": 10000,
+    "websocketSubscriptionMode": "Change"
+  },
+  "activeTheme": "Base",
+  "themes": {
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Base.theme",
+          "description": "",
+          "type": "ThemedValues"
+        },
+        {
+          "name": "Themes/Base/Style.css",
+          "description": "",
+          "type": "Stylesheet"
+        }
+      ],
+      "replacesThemeForControls": []
+    }
+  },
+  "dependencyFiles": [
+    {
+      "name": "Fonts/Fonts.css",
+      "description": "",
+      "type": "Stylesheet"
+    }
+  ],
+  "userControls": [],
+  "content": [],
+  "views": [
+    {
+      "url": "Desktop.view",
+      "preload": false
+    }
+  ],
+  "userFunctions": [],
+  "symbols": {
+    "internal": {}
+  },
+  "trigger": [],
+  "actionTemplates": [],
+  "languages": {
+    "de-DE": "Localization\\de-DE.localization",
+    "en-US": "Localization\\en-US.localization"
+  },
+  "creatorSettings": {
+    "viewport": {
+      "defaultWidth": 1024,
+      "defaultHeight": 768
+    }
+  }
+}

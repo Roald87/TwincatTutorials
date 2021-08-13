@@ -1,0 +1,184 @@
+﻿<div id="Desktop" data-tchmi-type="tchmi-view"
+     data-tchmi-top="0" data-tchmi-left="0"
+     data-tchmi-width-mode="Content"
+     data-tchmi-min-width="100" data-tchmi-min-width-unit="%"
+     data-tchmi-height-mode="Content"
+     data-tchmi-min-height="100" data-tchmi-min-height-unit="%"
+     data-tchmi-background-image="Images/Background.png"
+     data-tchmi-background-image-height="100" data-tchmi-background-image-width="100"
+     data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width-unit="%" data-tchmi-left-unit="px" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-height-unit="px">
+
+<div id="TcHmiToggleButton" data-tchmi-type="tchmi-toggle-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="21" data-tchmi-left-unit="px" data-tchmi-text="On" data-tchmi-top="24" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-toggle-group="OvenSwitch" data-tchmi-text-font-size-unit="px">
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmiToggleButton.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%PLC1.MAIN.oven._command%/s%",
+        "valueType": "tchmi:server#/definitions/PLC1.Command",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/PLC1.Command",
+          "value": 1
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+<div id="TcHmiToggleButton_1" data-tchmi-type="tchmi-toggle-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="139" data-tchmi-left-unit="px" data-tchmi-text="Off" data-tchmi-top="24" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-toggle-group="OvenSwitch" data-tchmi-text-font-size-unit="px">
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmiToggleButton_1.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%PLC1.MAIN.oven._command%/s%",
+        "valueType": "tchmi:server#/definitions/PLC1.Command",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/PLC1.Command",
+          "value": 0
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+<div id="OvenState" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="21" data-tchmi-left-unit="px" data-tchmi-text="%f%&quot;Oven state: &quot; + %s%PLC1.MAIN.oven._stateName%/s%%/f%" data-tchmi-top="90" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-size-unit="px">
+
+</div>
+
+<div id="TemperatureMeasured" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="21" data-tchmi-left-unit="px" data-tchmi-text="%f%&quot;Temperature:\t&quot; + GaugeValueFormatter(%s%PLC1.MAIN.oven.thermoCouple_Celcius%/s%, 1)%/f%" data-tchmi-top="126" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="14" data-tchmi-text-font-size-unit="px">
+
+</div>
+
+<div id="TemperatureSetpoint" data-tchmi-type="tchmi-textbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="171" data-tchmi-left-unit="px" data-tchmi-top="126" data-tchmi-top-unit="px" data-tchmi-width="68" data-tchmi-width-unit="px" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text="%s%PLC1.MAIN.oven.targetTemperature%/s%" data-tchmi-text-font-size="14" data-tchmi-text-font-size-unit="px">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TemperatureSetpoint.onUserInteractionFinished",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%PLC1.MAIN.oven.targetTemperature%/s%",
+        "valueType": "tchmi:general#/definitions/REAL",
+        "value": {
+          "objectType": "Symbol",
+          "symbolExpression": "%ctrl%TemperatureSetpoint::Text%/ctrl%"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+<div id="TemperatureUnit" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="248" data-tchmi-left-unit="px" data-tchmi-top="126" data-tchmi-top-unit="px" data-tchmi-width="25" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="14" data-tchmi-text="C" data-tchmi-text-font-size-unit="px">
+
+</div>
+
+<div id="TcHmiTrendLineChart" data-tchmi-type="tchmi-trend-line-chart"   data-tchmi-end="Latest" data-tchmi-height="295" data-tchmi-height-unit="px" data-tchmi-left="21" data-tchmi-left-unit="px" data-tchmi-start="PT10M" data-tchmi-top="169" data-tchmi-top-unit="px" data-tchmi-width="860" data-tchmi-width-unit="px" data-tchmi-x-axis-name="x Axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-interval="500" data-tchmi-show-menu-bar="True">
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-line-graph-descriptions" type="application/json">
+[
+  {
+    "yAxisId": 1,
+    "lineWidth": 1,
+    "pointDot": false,
+    "pointDotRadius": 3,
+    "pointDotStrokeWidth": 1,
+    "lineColor": {
+      "color": "rgba(112, 218, 71, 1)"
+    },
+    "pointDotFillColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    },
+    "pointDotStrokeColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    },
+    "pointDotInStopMode": true,
+    "symbol": "PLC1.MAIN.oven.targetTemperature"
+  },
+  {
+    "yAxisId": 1,
+    "lineWidth": 1,
+    "pointDot": false,
+    "pointDotRadius": 3,
+    "pointDotStrokeWidth": 1,
+    "lineColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    },
+    "pointDotFillColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    },
+    "pointDotStrokeColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    },
+    "pointDotInStopMode": true,
+    "symbol": "PLC1.MAIN.oven.thermoCouple_Celcius"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
+[
+  {
+    "id": 1,
+    "position": "Left",
+    "mainTickMinValue": 0.0,
+    "mainTickMaxValue": 100.0,
+    "showLabels": true,
+    "showAxisName": true,
+    "axisName": "Temperature",
+    "axisNameFontFamily": "",
+    "axisNameFontSize": 15,
+    "axisNameFontSizeUnit": "px",
+    "axisNameFontWeight": "Bold",
+    "decimalPlaces": 2,
+    "unit": "C",
+    "autoScaling": true,
+    "labelFontColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    },
+    "axisColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    },
+    "axisNameFontColor": {
+      "color": "rgba(71, 148, 218, 1)"
+    }
+  }
+]
+</script>
+</div>
+
+</div>

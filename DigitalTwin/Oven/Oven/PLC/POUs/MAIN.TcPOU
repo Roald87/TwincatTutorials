@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="MAIN" Id="{fb3609b4-3109-466e-87e3-78da51fdfb50}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+    relay : Relay;
+    oven : Oven;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Oven command comes from the HMI
+oven(relayState:=relay._state);
+relay(_command:=oven.relayCommand);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

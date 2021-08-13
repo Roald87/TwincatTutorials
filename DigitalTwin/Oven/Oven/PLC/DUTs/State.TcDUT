@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="State" Id="{c4d4bdac-0e7b-4995-bcec-9a94a5801357}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE State :
+(
+	Off := 0,
+    TurningOff,
+    On,
+    TurningOn
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

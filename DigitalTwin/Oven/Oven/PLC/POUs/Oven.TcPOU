@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="Oven" Id="{ad7089ea-267e-46e0-abfa-e69985da7a3c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Oven EXTENDS StateMachine
+VAR_INPUT
+    relayState : State;
+    targetTemperature : REAL;
+END_VAR
+VAR_OUTPUT
+    relayCommand : Command;
+END_VAR
+VAR
+    thermoCouple_Celcius AT %I* : REAL;
+    heaterCurrent_Ampere AT %Q* : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SUPER^();
+
+CASE _state OF 
+    State.Off :
+        IF _command = Command.On THEN
+            _state := State.TurningOn;
+		END_IF
+    State.TurningOn :
+        relayCommand := Command.On;
+        IF relayState = State.On THEN
+            _state := State.On;
+		END_IF
+        
+        IF _command = Command.Off THEN
+            _state := State.TurningOff;
+		END_IF
+    State.On :
+        heaterCurrent_Ampere := SQRT(targetTemperature);    
+    
+        IF _command = Command.Off THEN
+            _state := State.TurningOff;
+		END_IF
+    State.TurningOff :
+        heaterCurrent_Ampere := 0;
+        relayCommand := Command.Off;
+        IF relayState = State.Off THEN
+            _state := State.Off;
+		END_IF
+END_CASE
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,1510 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" TcVersionFixed="true">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000700000001}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..0] OF OTCID</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000D00000001}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..0] OF UDINT</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000400000002}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..1] OF WORD</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>2</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}" TcBaseType="true">ST_LibVersion</Name>
+			<BitSize>288</BitSize>
+			<SubItem>
+				<Name>iMajor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iMinor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iBuild</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iRevision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nFlags</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>sVersion</Name>
+				<Type GUID="{18071995-0000-0000-0000-000100000017}">STRING(23)</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{46170A02-867E-6C37-7ADA-8906B58ADE1B}" AutoDeleteType="true">VERSION</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>uiMajor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>uiMinor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>uiServicePack</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>uiPatch</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{4591E628-DBCE-4E33-AE0B-7EB853AA256E}" Namespace="PLC" TcBaseType="true">EPlcPersistentStatus</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[PS_None]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[PS_All]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[PS_Partial]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{941FDF6E-37CE-4C30-AA23-3236AFA461E2}" Namespace="PLC" TcBaseType="true">PlcAppSystemInfo</Name>
+			<BitSize>2048</BitSize>
+			<SubItem>
+				<Name>ObjId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TaskCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OnlineChangeCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Flags</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AdsPort</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>BootDataLoaded</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>144</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OldBootData</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AppTimestamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000004C}">DT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>KeepOutputsOnBP</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ShutdownInProgress</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>200</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LicensesPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>208</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>BSODOccured</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>216</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LoggedIn</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PersistentStatus</Name>
+				<Type GUID="{4591E628-DBCE-4E33-AE0B-7EB853AA256E}" Namespace="PLC">EPlcPersistentStatus</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>232</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TComSrvPtr</Name>
+				<Type GUID="{00000030-0000-0000-E000-000000000064}">ITComObjectServer</Type>
+				<BitSize X64="64">32</BitSize>
+				<BitOffs>256</BitOffs>
+				<Properties>
+					<Property>
+						<Name>TcComInterface</Name>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>AppName</Name>
+				<Type GUID="{18071995-0000-0000-0000-00010000003F}">STRING(63)</Type>
+				<BitSize>512</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ProjectName</Name>
+				<Type GUID="{18071995-0000-0000-0000-00010000003F}">STRING(63)</Type>
+				<BitSize>512</BitSize>
+				<BitOffs>1024</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{D91E046A-A488-4D27-8D43-0F3C40ED5081}"/>
+				<Hide GUID="{5DCEB2BC-E196-43AD-80B7-EBACF31A430B}"/>
+				<Hide GUID="{1B9FDDE4-B3B7-4F0F-AB14-24EDC2F643E7}"/>
+				<Hide GUID="{C1C52E30-BC0B-44CA-BF39-E2FE7F2D145C}"/>
+				<Hide GUID="{5C8FF47F-7F83-4493-8D21-F1FF8A08F75A}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{56294066-FFF7-46F3-8206-FA06A30B13BA}" Namespace="PLC" TcBaseType="true">PlcTaskSystemInfo</Name>
+			<BitSize>1024</BitSize>
+			<SubItem>
+				<Name>ObjId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CycleTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Priority</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AdsPort</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CycleCount</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DcTaskTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LastExecTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FirstCycle</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CycleTimeExceeded</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>232</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InCallAfterOutputUpdate</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>240</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>RTViolation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>248</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TaskName</Name>
+				<Type GUID="{18071995-0000-0000-0000-00010000003F}">STRING(63)</Type>
+				<BitSize>512</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{6A76D020-03A2-465C-A678-C341951E9EF3}"/>
+				<Hide GUID="{6F7D679F-72A0-4831-A7F1-085F839743ED}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{45C5D3F5-A54A-27C8-8AF0-3ABCE4A1006D}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..1] OF PLC.PlcTaskSystemInfo</Name>
+			<BitSize>1024</BitSize>
+			<BaseType GUID="{56294066-FFF7-46F3-8206-FA06A30B13BA}" Namespace="PLC">PlcTaskSystemInfo</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{7FAECF98-A7E1-ED05-5DC4-5BBE5F36174C}" AutoDeleteType="true">_Implicit_KindOfTask</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[_implicit_cyclic]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[_implicit_event]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[_implicit_external]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[_implicit_freewheeling]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{796E10E9-EF79-FB21-D1CF-160868F01600}" AutoDeleteType="true">_Implicit_Jitter_Distribution</Name>
+			<BitSize>48</BitSize>
+			<SubItem>
+				<Name>wRangeMax</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>wCountJitterNeg</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>wCountJitterPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>hide</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{558763F6-507D-C439-1E68-CE46801EACDA}" AutoDeleteType="true">_Implicit_Task_Info</Name>
+			<BitSize>896</BitSize>
+			<SubItem>
+				<Name>dwVersion</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>pszName</Name>
+				<Type GUID="{18071995-0000-0000-0000-000100000050}" PointerTo="1">STRING(80)</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nPriority</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>KindOf</Name>
+				<Type GUID="{7FAECF98-A7E1-ED05-5DC4-5BBE5F36174C}">_Implicit_KindOfTask</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>144</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bWatchdog</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bProfilingTask</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>168</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwEventFunctionPointer</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}" PointerTo="1">BYTE</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>pszExternalEvent</Name>
+				<Type GUID="{18071995-0000-0000-0000-000100000050}" PointerTo="1">STRING(80)</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwTaskEntryFunctionPointer</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}" PointerTo="1">BYTE</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>320</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwWatchdogSensitivity</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>384</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwInterval</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>416</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwWatchdogTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>448</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwLastCycleTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>480</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwAverageCycleTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwMaxCycleTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>544</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwMinCycleTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>576</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>diJitter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>608</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>diJitterMin</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>diJitterMax</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>672</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwCycleCount</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>704</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>wTaskStatus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>736</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>wNumOfJitterDistributions</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>752</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>pJitterDistribution</Name>
+				<Type GUID="{796E10E9-EF79-FB21-D1CF-160868F01600}" PointerTo="1">_Implicit_Jitter_Distribution</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>768</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bWithinSPSTimeSlicing</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>832</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>byDummy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>840</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bShouldBlock</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>848</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>856</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwIECCycleCount</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>864</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>hide</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{68E425A3-600D-0CDE-5319-9793ED4A9872}" AutoDeleteType="true">Command</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Off]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[On]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{8BC851C7-D172-973D-9DB1-1663667B9F90}" AutoDeleteType="true">State</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Off]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TurningOff]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[On]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TurningOn]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{0D12AC96-73F4-8965-53C7-2A5CCB125A09}" AutoDeleteType="true">StateMachine</Name>
+			<BitSize>768</BitSize>
+			<SubItem>
+				<Name>_command</Name>
+				<Type GUID="{68E425A3-600D-0CDE-5319-9793ED4A9872}">Command</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>64</BitOffs>
+				<Properties>
+					<Property>
+						<Name>ItemType</Name>
+						<Value>Input</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>_state</Name>
+				<Type GUID="{8BC851C7-D172-973D-9DB1-1663667B9F90}">State</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>80</BitOffs>
+				<Properties>
+					<Property>
+						<Name>ItemType</Name>
+						<Value>Output</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>_stateName</Name>
+				<Type GUID="{18071995-0000-0000-0000-000100000050}">STRING(80)</Type>
+				<BitSize>648</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<Method>
+				<Name>__GetInterfacePointer</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>pRef</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000007}" PointerTo="2">DWORD</Type>
+					<BitSize>64</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>__GetInterfaceReference</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>nInterfaceId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pRef</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000007}" PointerTo="2">DWORD</Type>
+					<BitSize>64</BitSize>
+				</Parameter>
+			</Method>
+			<Properties>
+				<Property>
+					<Name>PouType</Name>
+					<Value>FunctionBlock</Value>
+				</Property>
+			</Properties>
+			<Hides>
+				<Hide GUID="{EAF3E378-D45F-604A-250D-908C3466613D}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{538A7912-E7D7-149B-C18B-E5C39C8FA08E}" AutoDeleteType="true">Relay</Name>
+			<BitSize>832</BitSize>
+			<ExtendsType GUID="{0D12AC96-73F4-8965-53C7-2A5CCB125A09}">StateMachine</ExtendsType>
+			<SubItem>
+				<Name>relayOnFeedback</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>768</BitOffs>
+				<Properties>
+					<Property>
+						<Name>TcAddressType</Name>
+						<Value>Input</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>turnOnRelay</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>776</BitOffs>
+				<Properties>
+					<Property>
+						<Name>TcAddressType</Name>
+						<Value>Output</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<Method>
+				<Name>__GetInterfacePointer</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>pRef</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000007}" PointerTo="2">DWORD</Type>
+					<BitSize>64</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>__GetInterfaceReference</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>nInterfaceId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pRef</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000007}" PointerTo="2">DWORD</Type>
+					<BitSize>64</BitSize>
+				</Parameter>
+			</Method>
+			<Properties>
+				<Property>
+					<Name>PouType</Name>
+					<Value>FunctionBlock</Value>
+				</Property>
+			</Properties>
+			<Hides>
+				<Hide GUID="{E54C70D9-8945-CA14-6CAC-89077D259308}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{FAB995DC-3FB4-3F8E-6153-53999871F75D}" AutoDeleteType="true">Oven</Name>
+			<BitSize>960</BitSize>
+			<ExtendsType GUID="{0D12AC96-73F4-8965-53C7-2A5CCB125A09}">StateMachine</ExtendsType>
+			<SubItem>
+				<Name>relayState</Name>
+				<Type GUID="{8BC851C7-D172-973D-9DB1-1663667B9F90}">State</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>768</BitOffs>
+				<Properties>
+					<Property>
+						<Name>ItemType</Name>
+						<Value>Input</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>targetTemperature</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>800</BitOffs>
+				<Properties>
+					<Property>
+						<Name>ItemType</Name>
+						<Value>Input</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>relayCommand</Name>
+				<Type GUID="{68E425A3-600D-0CDE-5319-9793ED4A9872}">Command</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>832</BitOffs>
+				<Properties>
+					<Property>
+						<Name>ItemType</Name>
+						<Value>Output</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>thermoCouple_Celcius</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>864</BitOffs>
+				<Properties>
+					<Property>
+						<Name>TcAddressType</Name>
+						<Value>Input</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>heaterCurrent_Ampere</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>896</BitOffs>
+				<Properties>
+					<Property>
+						<Name>TcAddressType</Name>
+						<Value>Output</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<Method>
+				<Name>__GetInterfacePointer</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>pRef</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000007}" PointerTo="2">DWORD</Type>
+					<BitSize>64</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>__GetInterfaceReference</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>nInterfaceId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pRef</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000007}" PointerTo="2">DWORD</Type>
+					<BitSize>64</BitSize>
+				</Parameter>
+			</Method>
+			<Properties>
+				<Property>
+					<Name>PouType</Name>
+					<Value>FunctionBlock</Value>
+				</Property>
+			</Properties>
+			<Hides>
+				<Hide GUID="{535DD16F-8C82-8474-DC5B-D07FF43AE0FF}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+	<Project ProjectGUID="{84B9953E-8B8B-468A-B86C-A5EB00EB6970}" Target64Bit="true" ShowHideConfigurations="#x347">
+		<System>
+			<Settings MaxCpus="4" NonWinCpus="1">
+				<Cpu CpuId="3"/>
+			</Settings>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+				<Task Id="4" Priority="1" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>SimTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{923970F9-EAFA-47FA-9D15-CD7AE0B6A700}" Name="SimulationPlc" PrjFilePath="SimulationPlc\SimulationPlc.plcproj" TmcFilePath="SimulationPlc\SimulationPlc.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="SimulationPlc\SimulationPlc.tmc">
+					<Name>SimulationPlc Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>SimulationTask Inputs</Name>
+						<Var>
+							<Name>MAIN.simOven.heaterCurrent_Ampere</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.simRelay.turnOnRelay</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>SimulationTask Outputs</Name>
+						<Var>
+							<Name>MAIN.simOven.thermoCouple_Celcius</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.simRelay.relayOnFeedback</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Contexts>
+						<Context>
+							<Id NeedCalleeCall="true">0</Id>
+							<Name>SimulationTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>1</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="1" OTCID="#x08502041"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project Name="PLC" AmsPort="851" TargetArchiveSettings="#x0001" FileArchiveSettings="#x0000" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
+				<Instance Id="#x08502000" KeepUnrestoredLinks="2" AutoReloadTmc="true" LastKnownRefactorCnt="1" TmcPath="..\..\Oven\Oven\PLC\PLC.tmc">
+					<Name>PLC Instance</Name>
+					<TmcDesc GUID="{00F1AF1C-421E-40F5-A998-B0B0B2435546}" TcSmClass="TComPlcObjDef">
+						<Name>PLC</Name>
+						<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+						<InitSequence>P</InitSequence>
+						<Contexts>
+							<Context>
+								<Id NeedCalleeCall="true">0</Id>
+								<Name>PlcTask</Name>
+								<ManualConfig>
+									<OTCID>#x02010030</OTCID>
+								</ManualConfig>
+								<Priority>20</Priority>
+								<CycleTime>10000000</CycleTime>
+							</Context>
+						</Contexts>
+						<Parameters>
+							<Parameter ReadOnly="true">
+								<Name>Application Name</Name>
+								<BitSize>72</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000100000008}">STRING(8)</BaseType>
+								<PTCID>#x08500003</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Project Name</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000100000003}">STRING(3)</BaseType>
+								<PTCID>#x0850000c</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Application Port</Name>
+								<BitSize>16</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+								<PTCID>#x08500004</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Auxtask Object Id</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+								<PTCID>#x0850000b</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Application Timestamp</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-00000000004C}">DT</BaseType>
+								<PTCID>#x0850000d</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Symbolic Mapping</Name>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<PTCID>#x0850801b</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Task Module OIDs</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000700000001}">ARRAY [0..0] OF OTCID</BaseType>
+								<PTCID>#x08500005</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Task Module SortOrders</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000D00000001}">ARRAY [0..0] OF UDINT</BaseType>
+								<PTCID>#x0850800f</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Task Module Names</Name>
+								<BitSize>80</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-001100000009}">MSTRING(9)</BaseType>
+								<PTCID>#x08508019</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Task Caller OIDs</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000700000001}">ARRAY [0..0] OF OTCID</BaseType>
+								<PTCID>#x0850801a</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Task Module ADI Indices</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000400000002}">ARRAY [0..1] OF WORD</BaseType>
+								<PTCID>#x0850801c</PTCID>
+							</Parameter>
+							<Parameter ReadOnly="true">
+								<Name>Mapping OIDs</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000700000001}">ARRAY [0..0] OF OTCID</BaseType>
+								<PTCID>#x08500006</PTCID>
+							</Parameter>
+						</Parameters>
+						<DataAreas>
+							<DataArea>
+								<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+								<Name>PlcTask Inputs</Name>
+								<ContextId>0</ContextId>
+								<ByteSize>524288</ByteSize>
+								<Symbol>
+									<Name>MAIN.relay.relayOnFeedback</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcAddressType</Name>
+											<Value>Input</Value>
+										</Property>
+									</Properties>
+									<BitOffs>3606720</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>MAIN.oven.thermoCouple_Celcius</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcAddressType</Name>
+											<Value>Input</Value>
+										</Property>
+									</Properties>
+									<BitOffs>3671008</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+								<Name>PlcTask Outputs</Name>
+								<ContextId>0</ContextId>
+								<ByteSize>524288</ByteSize>
+								<Symbol>
+									<Name>MAIN.relay.turnOnRelay</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcAddressType</Name>
+											<Value>Output</Value>
+										</Property>
+									</Properties>
+									<BitOffs>3606728</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>MAIN.oven.heaterCurrent_Ampere</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcAddressType</Name>
+											<Value>Output</Value>
+										</Property>
+									</Properties>
+									<BitOffs>3671040</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
+								<Name>PlcTask Internal</Name>
+								<ContextId>0</ContextId>
+								<ByteSize>524288</ByteSize>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Global_Version.stLibVersion_Tc2_Standard</Name>
+									<BitSize>288</BitSize>
+									<BaseType GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}">ST_LibVersion</BaseType>
+									<Default>
+										<SubItem>
+											<Name>.iMajor</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iMinor</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iBuild</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iRevision</Name>
+											<Value>0</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.nFlags</Name>
+											<Value>0</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.sVersion</Name>
+											<String><![CDATA[3.3.3.0]]></String>
+										</SubItem>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>const_non_replaced</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3072000</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Global_Version.stLibVersion_Tc2_System</Name>
+									<BitSize>288</BitSize>
+									<BaseType GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}">ST_LibVersion</BaseType>
+									<Default>
+										<SubItem>
+											<Name>.iMajor</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iMinor</Name>
+											<Value>4</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iBuild</Name>
+											<Value>22</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iRevision</Name>
+											<Value>0</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.sVersion</Name>
+											<String><![CDATA[3.4.22.0]]></String>
+										</SubItem>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>const_non_replaced</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3072288</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Global_Version.stLibVersion_Tc3_Module</Name>
+									<BitSize>288</BitSize>
+									<BaseType GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}">ST_LibVersion</BaseType>
+									<Default>
+										<SubItem>
+											<Name>.iMajor</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iMinor</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iBuild</Name>
+											<Value>21</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.iRevision</Name>
+											<Value>0</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.sVersion</Name>
+											<String><![CDATA[3.3.21.0]]></String>
+										</SubItem>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>const_non_replaced</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3072576</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.bLittleEndian</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<Default>
+										<Value>1</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081672</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.RuntimeVersion</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>64</BitSize>
+									<BaseType GUID="{46170A02-867E-6C37-7ADA-8906B58ADE1B}">VERSION</BaseType>
+									<Default>
+										<SubItem>
+											<Name>.uiMajor</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.uiMinor</Name>
+											<Value>5</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.uiServicePack</Name>
+											<Value>13</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.uiPatch</Name>
+											<Value>0</Value>
+										</SubItem>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081680</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.CompilerVersion</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>64</BitSize>
+									<BaseType GUID="{46170A02-867E-6C37-7ADA-8906B58ADE1B}">VERSION</BaseType>
+									<Default>
+										<SubItem>
+											<Name>.uiMajor</Name>
+											<Value>3</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.uiMinor</Name>
+											<Value>5</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.uiServicePack</Name>
+											<Value>13</Value>
+										</SubItem>
+										<SubItem>
+											<Name>.uiPatch</Name>
+											<Value>40</Value>
+										</SubItem>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081744</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.bSimulationMode</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<Default>
+										<Value>0</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081808</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.bFPUSupport</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<Default>
+										<Value>1</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081816</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.nRegisterSize</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+									<Default>
+										<Value>64</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081824</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.nPackMode</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<Default>
+										<Value>8</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081840</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.RuntimeVersionNumeric</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000007}">DWORD</BaseType>
+									<Default>
+										<Value>50662656</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081856</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.CompilerVersionNumeric</Name>
+									<Comment><![CDATA[ Does the target support multiple cores?]]></Comment>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000007}">DWORD</BaseType>
+									<Default>
+										<Value>50662696</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081888</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>Constants.bMulticoreSupport</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<Default>
+										<Value>0</Value>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081920</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>no_init</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081952</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
+									<BitSize>2048</BitSize>
+									<BaseType GUID="{941FDF6E-37CE-4C30-AA23-3236AFA461E2}">PLC.PlcAppSystemInfo</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>no_init</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3081984</BitOffs>
+								</Symbol>
+								<Symbol TcContextMask="#x00000000">
+									<Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
+									<BitSize>1024</BitSize>
+									<BaseType GUID="{45C5D3F5-A54A-27C8-8AF0-3ABCE4A1006D}">ARRAY [1..1] OF PLC.PlcTaskSystemInfo</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>no_init</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3084032</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>TwinCAT_SystemInfoVarList._TaskOid_PlcTask</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>no_init</Name>
+										</Property>
+									</Properties>
+									<BitOffs>3085056</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
+									<BitSize>896</BitSize>
+									<BaseType GUID="{558763F6-507D-C439-1E68-CE46801EACDA}">_Implicit_Task_Info</BaseType>
+									<Default>
+										<SubItem>
+											<Name>.dwVersion</Name>
+											<Value>2</Value>
+										</SubItem>
+									</Default>
+									<Properties>
+										<Property>
+											<Name>TcVarGlobal</Name>
+										</Property>
+										<Property>
+											<Name>TcContextName</Name>
+											<Value>PlcTask</Value>
+										</Property>
+									</Properties>
+									<BitOffs>3085120</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>MAIN.relay</Name>
+									<BitSize>832</BitSize>
+									<BaseType GUID="{538A7912-E7D7-149B-C18B-E5C39C8FA08E}">Relay</BaseType>
+									<BitOffs>3605952</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>MAIN.oven</Name>
+									<BitSize>960</BitSize>
+									<BaseType GUID="{FAB995DC-3FB4-3F8E-6153-53999871F75D}">Oven</BaseType>
+									<BitOffs>3670144</BitOffs>
+								</Symbol>
+							</DataArea>
+						</DataAreas>
+						<Properties>
+							<Property>
+								<Name>ApplicationName</Name>
+								<Value>Port_851</Value>
+							</Property>
+							<Property>
+								<Name>ChangeDate</Name>
+								<Value>2021-08-13T14:55:02</Value>
+							</Property>
+							<Property>
+								<Name>GeneratedCodeSize</Name>
+								<Value>61440</Value>
+							</Property>
+							<Property>
+								<Name>GlobalDataSize</Name>
+								<Value>16384</Value>
+							</Property>
+						</Properties>
+						<ParentOTCID>#x08500000</ParentOTCID>
+						<ParameterValues>
+							<Value>
+								<Name>Application Name</Name>
+								<String>Port_851</String>
+							</Value>
+							<Value>
+								<Name>Project Name</Name>
+								<String>PLC</String>
+							</Value>
+							<Value>
+								<Name>Application Port</Name>
+								<Value>851</Value>
+							</Value>
+							<Value>
+								<Name>Auxtask Object Id</Name>
+								<Value>139460624</Value>
+							</Value>
+							<Value>
+								<Name>Application Timestamp</Name>
+								<Value>1628866502</Value>
+							</Value>
+							<Value>
+								<Name>Symbolic Mapping</Name>
+								<EnumText>TRUE</EnumText>
+							</Value>
+							<Value>
+								<Name>Task Module OIDs</Name>
+								<Value>139468801</Value>
+							</Value>
+							<Value>
+								<Name>Task Module SortOrders</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>Task Module Names</Name>
+								<Data>506c635461736b00006e</Data>
+							</Value>
+							<Value>
+								<Name>Task Caller OIDs</Name>
+								<Value>33620016</Value>
+							</Value>
+							<Value>
+								<Name>Task Module ADI Indices</Name>
+								<Value>65536</Value>
+							</Value>
+							<Value>
+								<Name>Mapping OIDs</Name>
+								<Value>33751056</Value>
+							</Value>
+						</ParameterValues>
+					</TmcDesc>
+					<Contexts>
+						<Context>
+							<Id NeedCalleeCall="true">0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io/>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{08502041-2001-0850-4020-500800205008}" Id="#x02030010" Watchdog="04000000040000000400000004000000"/>
+		<OwnerA Name="TIPC^PLC^PLC Instance">
+			<OwnerB Name="TIPC^SimulationPlc^SimulationPlc Instance">
+				<Link VarA="PlcTask Inputs^MAIN.oven.thermoCouple_Celcius" VarB="SimulationTask Outputs^MAIN.simOven.thermoCouple_Celcius"/>
+				<Link VarA="PlcTask Inputs^MAIN.relay.relayOnFeedback" VarB="SimulationTask Outputs^MAIN.simRelay.relayOnFeedback"/>
+				<Link VarA="PlcTask Outputs^MAIN.oven.heaterCurrent_Ampere" VarB="SimulationTask Inputs^MAIN.simOven.heaterCurrent_Ampere"/>
+				<Link VarA="PlcTask Outputs^MAIN.relay.turnOnRelay" VarB="SimulationTask Inputs^MAIN.simRelay.turnOnRelay"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>

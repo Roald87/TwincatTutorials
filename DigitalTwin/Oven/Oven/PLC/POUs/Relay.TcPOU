@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="Relay" Id="{afd3b520-b758-462f-9537-0e8a0fd73059}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Relay EXTENDS StateMachine
+VAR
+    relayOnFeedback AT %I* : BOOL;
+    turnOnRelay AT %Q* : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SUPER^();
+
+CASE _state OF 
+    State.Off :
+        IF _command = Command.On THEN
+            _state := State.TurningOn;
+		END_IF
+    State.TurningOn :
+        turnOnRelay := TRUE;
+        IF relayOnFeedback THEN
+            _state := State.On;
+		END_IF
+        IF _command = Command.Off THEN
+            _state := State.TurningOff;
+		END_IF
+    State.On :
+        IF _command = Command.Off THEN
+            _state := State.TurningOff;
+		END_IF
+    State.TurningOff :
+        turnOnRelay := FALSE;
+        IF NOT relayOnFeedback THEN
+            _state := State.Off;
+		END_IF
+        IF _command = Command.On THEN
+            _state := State.TurningOn;
+		END_IF
+END_CASE
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

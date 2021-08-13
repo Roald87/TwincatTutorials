@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="SimRelay" Id="{43242ac5-de18-4720-b626-72f621b40b9d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK SimRelay
+VAR
+    relayOnFeedback AT %Q* : BOOL;
+    turnOnRelay AT %I* : BOOL;
+    relayOnDelay : TON := (PT:=delay);
+    relayOffDelay : TOF := (PT:=delay);
+END_VAR
+VAR CONSTANT
+delay : TIME := T#1S;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[relayOnDelay(IN:=turnOnRelay);
+IF relayOnDelay.Q THEN
+    relayOnFeedback := TRUE;
+END_IF
+
+relayOffDelay(IN:=turnOnRelay);
+IF NOT relayOffDelay.Q THEN
+    relayOnFeedback := FALSE;
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
