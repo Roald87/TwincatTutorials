@@ -9,7 +9,7 @@ VAR
     relayOffDelay : TOF := (PT:=delay);
 END_VAR
 VAR CONSTANT
-delay : TIME := T#1S;
+    delay : TIME := T#1S;
 END_VAR
 ]]></Declaration>
     <Implementation>
