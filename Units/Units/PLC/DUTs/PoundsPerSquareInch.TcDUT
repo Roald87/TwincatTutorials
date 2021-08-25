@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="PoundsPerSquareInch" Id="{dd78407f-fc34-4a70-aa06-c7f371e91edd}">
+    <Declaration><![CDATA[TYPE PoundsPerSquareInch :
+STRUCT
+     _ : REAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

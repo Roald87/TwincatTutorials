@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="Celsius" Id="{ab40127f-c650-4882-b09d-61cba668f119}">
+    <Declaration><![CDATA[TYPE Celsius EXTENDS TerminalStatus :
+STRUCT
+    _ : REAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
