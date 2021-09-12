@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <DUT Name="Torr" Id="{09d322ec-e4c8-44c9-9957-50369defddfd}">
+    <Declaration><![CDATA[TYPE Torr : REAL; END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

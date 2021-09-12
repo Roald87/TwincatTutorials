@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="PoundsPerSquareInchToPascal" Id="{a948ff2b-09b1-41f7-99ac-1d3332b14541}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION PoundsPerSquareInchToPascal : Pascal
+VAR_INPUT
+    pressure : PoundsPerSquareInch;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[PoundsPerSquareInchToPascal._ := pressure._ * 6895;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

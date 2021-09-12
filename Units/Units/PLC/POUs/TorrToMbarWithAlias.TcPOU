@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="TorrToMbarWithAlias" Id="{ddfc8f5b-03ad-43e0-85dd-c1361620af61}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION TorrToMbarWithAlias : mbar
+VAR_INPUT
+    pressure : Torr;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TorrToMbarWithAlias := pressure * 1.3332236842;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="mmHgToPascal" Id="{a6985b3d-4ca0-4ab1-9135-42f98adb9f8f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION mmHgToPascal : Pascal
+VAR_INPUT
+     pressure : mmHg;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[mmHgToPascal._ := pressure._ * 133322;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
