@@ -1,0 +1,35 @@
+﻿/*Change the background color of the first column to orange*/
+#TcHmiDatagrid tr.missing-input td[data-column-name="Test1"] {
+    background-color: #F76D16;
+}
+
+/*Change the second column's background to orange*/
+#TcHmiDatagrid tr.below-zero td[data-column-name="Test2"] {
+    background-color: #F76D16;
+}
+
+/*A default background color for the second column*/
+#TcHmiDatagrid tr td[data-column-name="Test2"] {
+    background-color: #A0D5E8;
+}
+
+/*Change the background color of an entire row if a check box' state is changed*/
+#TcHmiDatagrid tr.not-checked td::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10000px;
+    pointer-events: none;
+    z-index: 1;
+    background-color: rgba(215, 249, 251, 0.5);
+}
+
+/*Make the text in the fourth column bold and change the color*/
+#TcHmiDatagrid tr.bold td[data-column-name="Test4"] {
+    font-weight: bold;
+    color: #F76D16;
+}
