@@ -5,7 +5,7 @@
 {attribute 'strict'}
 TYPE Command :
 (
-	Off := 0,
+    Off := 0,
     On
 );
 END_TYPE

@@ -9,7 +9,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[IF __ISVALIDREF(foo) THEN
     foo();
-END_IF	
+END_IF
 ]]></ST>
     </Implementation>
   </POU>

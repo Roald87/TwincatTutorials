@@ -4,25 +4,25 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
     maximumPressure : REAL; // [mbar]
-	
+
     pressure1 : REAL; // [mbar]
-	pressure2 : REAL; // [Torr]
-    
+    pressure2 : REAL; // [Torr]
+
     pressure1_mbar : REAL;
     pressure2_Torr : REAL;
-    
+
     pressure_si : mbar;
     pressure_imperial : Torr;
-    
+
     pressure_eu : Pascal;
     pressure_us : PoundsPerSquareInch;
-    
+
     pressure_hg : mmHg := (_:=0.31456);
-    pressure_pa : Pascal; 
-    
+    pressure_pa : Pascal;
+
     temperature_eu : Celsius;
     temperature_us : Fahrenheit := (_:=104);
-    
+
     temperature_eu_error : Celsius;
     temperature_us_error : Fahrenheit := (_:=97, IOError:=TRUE);
 END_VAR
@@ -33,7 +33,7 @@ END_VAR
 pressure2 := TorrToMbar(pressure:=pressure1);
 pressure2_Torr := TorrToMbarWithUnits(pressure_Torr:=pressure1_mbar);
 pressure_imperial := TorrToMbarWithAlias(pressure:=pressure_si);
-//// This raises a compiler warning 
+//// This raises a compiler warning
 //pressure_us := PoundsPerSquareInchToPascal(pressure:=pressure_eu);
 pressure_pa := mmHgToPascal(pressure:=pressure_hg);
 temperature_eu := FahrenheitToCelsius(temperature_us);

@@ -12,8 +12,8 @@ END_VAR]]></Declaration>
     <Method Name="FB_init" Id="{32f0664b-0ffa-40c7-8cf8-d226260a5102}">
       <Declaration><![CDATA[METHOD FB_init : BOOL
 VAR_INPUT
-	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
-	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+    bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+    bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
     foo : REFERENCE TO Foo;
 END_VAR
 ]]></Declaration>

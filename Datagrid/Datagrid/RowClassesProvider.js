@@ -30,6 +30,6 @@
 
         return cssStyles;
     };
-    
+
     TcHmi.Functions.registerFunction('RowClassesProvider', RowClassesProvider);
 })(TcHmi);

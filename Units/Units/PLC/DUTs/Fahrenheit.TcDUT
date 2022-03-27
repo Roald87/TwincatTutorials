@@ -3,7 +3,7 @@
   <DUT Name="Fahrenheit" Id="{a3c852d2-6558-4da1-a321-b016a21ba0b5}">
     <Declaration><![CDATA[TYPE Fahrenheit EXTENDS TerminalStatus :
 STRUCT
-    _ : LREAL; 
+    _ : LREAL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
