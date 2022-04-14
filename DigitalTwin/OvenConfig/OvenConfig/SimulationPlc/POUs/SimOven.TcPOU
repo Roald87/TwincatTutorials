@@ -11,7 +11,7 @@ VAR
     filterParameter : REAL := 0.995;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[thermoCouple_Celcius := previousTemperature * filterParameter 
+      <ST><![CDATA[thermoCouple_Celcius := previousTemperature * filterParameter
     + LIMIT(20, TO_REAL(EXPT(heaterCurrent_Ampere, 2)), 1E5) * (1 - filterParameter);
 previousTemperature := thermoCouple_Celcius;
 ]]></ST>

@@ -17,32 +17,32 @@ END_VAR
     <Implementation>
       <ST><![CDATA[SUPER^();
 
-CASE _state OF 
+CASE _state OF
     State.Off :
         IF _command = Command.On THEN
             _state := State.TurningOn;
-		END_IF
+        END_IF
     State.TurningOn :
         relayCommand := Command.On;
         IF relayState = State.On THEN
             _state := State.On;
-		END_IF
-        
+        END_IF
+
         IF _command = Command.Off THEN
             _state := State.TurningOff;
-		END_IF
+        END_IF
     State.On :
-        heaterCurrent_Ampere := SQRT(targetTemperature);    
-    
+        heaterCurrent_Ampere := SQRT(targetTemperature);
+
         IF _command = Command.Off THEN
             _state := State.TurningOff;
-		END_IF
+        END_IF
     State.TurningOff :
         heaterCurrent_Ampere := 0;
         relayCommand := Command.Off;
         IF relayState = State.Off THEN
             _state := State.Off;
-		END_IF
+        END_IF
 END_CASE
 ]]></ST>
     </Implementation>

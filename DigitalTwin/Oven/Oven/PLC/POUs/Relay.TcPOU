@@ -10,31 +10,31 @@ END_VAR
     <Implementation>
       <ST><![CDATA[SUPER^();
 
-CASE _state OF 
+CASE _state OF
     State.Off :
         IF _command = Command.On THEN
             _state := State.TurningOn;
-		END_IF
+        END_IF
     State.TurningOn :
         turnOnRelay := TRUE;
         IF relayOnFeedback THEN
             _state := State.On;
-		END_IF
+        END_IF
         IF _command = Command.Off THEN
             _state := State.TurningOff;
-		END_IF
+        END_IF
     State.On :
         IF _command = Command.Off THEN
             _state := State.TurningOff;
-		END_IF
+        END_IF
     State.TurningOff :
         turnOnRelay := FALSE;
         IF NOT relayOnFeedback THEN
             _state := State.Off;
-		END_IF
+        END_IF
         IF _command = Command.On THEN
             _state := State.TurningOn;
-		END_IF
+        END_IF
 END_CASE
 ]]></ST>
     </Implementation>

@@ -4,7 +4,7 @@
     <Declaration><![CDATA[PROGRAM ConfirmableAlarmWithArguments
 VAR
     bIsInitalized : BOOL;
-    
+
     fbAlarm : FB_TcAlarm;
     bRaiseAlarm : BOOL;
     bClearAlarm : BOOL;
@@ -13,24 +13,24 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF NOT bIsInitalized THEN
-	bIsInitalized := TRUE;
-	fbAlarm.CreateEx(TC_Events.MyEvents.Stop, TRUE, 0);	
+    bIsInitalized := TRUE;
+    fbAlarm.CreateEx(TC_Events.MyEvents.Stop, TRUE, 0);
 END_IF
 
 IF bRaiseAlarm THEN
-	bRaiseAlarm := FALSE;
-	fbAlarm.ipArguments.Clear().AddString('Alice');
-	fbAlarm.Raise(0);
+    bRaiseAlarm := FALSE;
+    fbAlarm.ipArguments.Clear().AddString('Alice');
+    fbAlarm.Raise(0);
 END_IF
 
 IF bConfirmAlarm THEN
-	bConfirmAlarm := FALSE;
-	fbAlarm.Confirm(0);
+    bConfirmAlarm := FALSE;
+    fbAlarm.Confirm(0);
 END_IF
 
 IF bClearAlarm THEN
-	bClearAlarm := FALSE;
-	fbAlarm.Clear(0, FALSE);
+    bClearAlarm := FALSE;
+    fbAlarm.Clear(0, FALSE);
 END_IF
 ]]></ST>
     </Implementation>

@@ -6,7 +6,7 @@
 {attribute 'to_string'}
 TYPE State :
 (
-	Off := 0,
+    Off := 0,
     TurningOff,
     On,
     TurningOn

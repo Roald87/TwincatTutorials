@@ -8,9 +8,9 @@
      data-tchmi-background-image-height="100" data-tchmi-background-image-width="100"
      data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width-unit="%">
 
-  <div id="ViewDesktopBeckhoffLogo" data-tchmi-type="tchmi-image" 
+  <div id="ViewDesktopBeckhoffLogo" data-tchmi-type="tchmi-image"
        data-tchmi-src="Images/Beckhoff_Logo.svg"
-       data-tchmi-left="20" data-tchmi-top="20" 
+       data-tchmi-left="20" data-tchmi-top="20"
        data-tchmi-width="194" data-tchmi-height="57">
 
   </div>

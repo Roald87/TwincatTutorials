@@ -1,7 +1,7 @@
 ﻿-- STANDARD --
 <!DOCTYPE html>
 <!--
-  Copyright (C) {{YEAR}} {{COMPANYNAME}}    
+  Copyright (C) {{YEAR}} {{COMPANYNAME}}
   For any information visit: {{COMPANYWEBSITE}}
 
   Deployment
@@ -30,7 +30,7 @@
 </head>
 <body>
 	<noscript style="font-size: large; padding: 50px;">
-		TwinCAT HMI needs to execute JavaScript Code in the browser. 
+		TwinCAT HMI needs to execute JavaScript Code in the browser.
 		Please enable JavaScript in this browser to use the HMI.
 	</noscript>
 	{{VIEWLEVEL}}
@@ -72,7 +72,7 @@
 -- SLAVE --
 <!DOCTYPE html>
 <!--
-  Copyright (C) {{YEAR}} {{COMPANYNAME}}    
+  Copyright (C) {{YEAR}} {{COMPANYNAME}}
   For any information visit: {{COMPANYWEBSITE}}
 
   Deployment
@@ -95,7 +95,7 @@
 </head>
 <body>
 	<noscript style="font-size: large; padding: 50px;">
-		TwinCAT HMI needs to execute JavaScript Code in the browser. 
+		TwinCAT HMI needs to execute JavaScript Code in the browser.
 		Please enable JavaScript in this browser to use the HMI.
 	</noscript>
 	{{VIEWLEVEL}}
