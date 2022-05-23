@@ -16,18 +16,12 @@
 */
 
 html {
-    font-family:RobotoCondensed,
-        'Microsoft YaHei', '微软雅黑',
-        'Hiragino Sans GB', '冬青黑体',
-        'STXihei', '华文细黑',
-        'WenQuanYi Micro Hei',
-        'Meiryo', 'メイリオ',
-        'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ ProN',
-        'Noto Sans CJK SC', 'Noto Sans CJK TC', 'Noto Sans CJK JP', 'Noto Sans CJK KR',
-
-        sans-serif
-        ;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: normal;
+  font-family: RobotoCondensed, "Microsoft YaHei", "微软雅黑",
+    "Hiragino Sans GB", "冬青黑体", "STXihei", "华文细黑", "WenQuanYi Micro Hei",
+    "Meiryo", "メイリオ", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN",
+    "Noto Sans CJK SC", "Noto Sans CJK TC", "Noto Sans CJK JP",
+    "Noto Sans CJK KR", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
 }

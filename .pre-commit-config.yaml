@@ -2,24 +2,24 @@
 # See https://pre-commit.com/hooks.html for more hooks
 # These are some pretty standard general pre-commit hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
-    -   id: trailing-whitespace # Removes trailing white spaces
-    -   id: check-yaml # checks yaml files for parseable syntax.
-    -   id: check-added-large-files # prevents giant files from being committed.
+      - id: trailing-whitespace # Removes trailing white spaces
+      - id: check-yaml # checks yaml files for parseable syntax.
+      - id: check-added-large-files # prevents giant files from being committed.
 
-
-# These hooks are made specifically for TwinCAT by the people of the Photon Controls and Data Systems at SLAC
--   repo: https://github.com/pcdshub/pre-commit-hooks
+  # These hooks are made specifically for TwinCAT by the people of the Photon Controls and Data Systems at SLAC
+  - repo: https://github.com/pcdshub/pre-commit-hooks
     rev: v1.1.0
     hooks:
-    -   id: twincat-leading-tabs-remover # Replaces all leading tabs with spaces
-    -   id: twincat-lineids-remover # Removes line ids. See point 4 of the link for why you don't need them https://cookncode.com/twincat/2021/06/07/tc-source-control-tips#2-creating-independent-files
-    -   id: twincat-xml-format # Formats .tmc and .tpy files
+      - id: twincat-leading-tabs-remover # Replaces all leading tabs with spaces
+      - id: twincat-lineids-remover # Removes line ids. See point 4 of the link for why you don't need them https://cookncode.com/twincat/2021/06/07/tc-source-control-tips#2-creating-independent-files
+      - id: twincat-xml-format # Formats .tmc and .tpy files
 
-# # Doesnt work for me yet: https://github.com/pre-commit/mirrors-prettier/issues/18
-# -   repo: https://github.com/pre-commit/mirrors-prettier
-#     rev: v2.6.0  # Use the sha / tag you want to point at
-#     hooks:
-#     -   id: prettier
+  # Doesnt work for me yet: https://github.com/pre-commit/mirrors-prettier/issues/18
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.6.0 # Use the sha / tag you want to point at
+    hooks:
+      - id: prettier
+        exclude_types: [json]

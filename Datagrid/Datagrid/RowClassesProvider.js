@@ -8,28 +8,31 @@
 /// <reference path="C:\TwinCAT\Functions\TE2000-HMI-Engineering\Infrastructure\TcHmiFramework\Latest\TcHmi.js" />
 
 (function (TcHmi) {
+  var RowClassesProvider = function (rowData, rowIndex, rowNumber) {
+    var cssStyles = []; // Collected CSS styles which will be returned at the end
 
-    var RowClassesProvider = function (rowData, rowIndex, rowNumber) {
-        var cssStyles = []; // Collected CSS styles which will be returned at the end
+    if (!rowData.Test1) {
+      // If the first column (Test1) is empty
+      cssStyles.push("missing-input"); // add the missing-input style to the array
+    }
 
-        if (!rowData.Test1) { // If the first column (Test1) is empty
-            cssStyles.push('missing-input'); // add the missing-input style to the array
-        }
+    if (rowData.Test2 < 0) {
+      // If the value of the second column is negative
+      cssStyles.push("below-zero"); // add the below-zero style
+    }
 
-        if (rowData.Test2 < 0) { // If the value of the second column is negative
-            cssStyles.push('below-zero'); // add the below-zero style
-        }
+    if (!rowData.Test3) {
+      // If the checkbox in the third column is not checked
+      cssStyles.push("not-checked");
+    }
 
-        if (!rowData.Test3) { // If the checkbox in the third column is not checked
-            cssStyles.push('not-checked');
-        }
+    if (rowData.Test4 == "cookncode") {
+      // if the text in the fourth column is cookncode
+      cssStyles.push("bold");
+    }
 
-        if (rowData.Test4 == "cookncode") { // if the text in the fourth column is cookncode
-            cssStyles.push('bold');
-        }
+    return cssStyles;
+  };
 
-        return cssStyles;
-    };
-
-    TcHmi.Functions.registerFunction('RowClassesProvider', RowClassesProvider);
+  TcHmi.Functions.registerFunction("RowClassesProvider", RowClassesProvider);
 })(TcHmi);
