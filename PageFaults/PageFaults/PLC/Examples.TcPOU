@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="Examples" Id="{87525701-b5c6-4916-893e-373055ab34e3}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Examples
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//PointerExample();
+//ReferenceExample();
+InterfaceExample();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

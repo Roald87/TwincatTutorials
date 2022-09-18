@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <Itf Name="I_Interface" Id="{203124bb-05dd-41ab-8d91-438e10f5a30d}">
+    <Declaration><![CDATA[INTERFACE I_Interface
+]]></Declaration>
+    <Property Name="SomeProperty" Id="{f9d73e21-fe2f-4fd4-9678-962e0d3e4644}">
+      <Declaration><![CDATA[PROPERTY SomeProperty : INT]]></Declaration>
+      <Get Name="Get" Id="{114e75f4-8ba8-44d7-a8cf-2a2d45238614}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{9db3a523-8f24-4eb7-b184-675dc73ee74a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="ReferenceExample" Id="{c317ba50-56a6-4e3d-841c-e220eff0e33d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM ReferenceExample
+VAR
+    refNumber : REFERENCE TO INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//// This causes a page fault
+//refNumber := 1;
+
+// This doesn't cause a page fault
+IF __ISVALIDREF(refNumber) THEN
+    refNumber := 1;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

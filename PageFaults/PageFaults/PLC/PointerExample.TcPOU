@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="PointerExample" Id="{fa16730f-d64b-4c79-8578-08fd57e9c169}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PointerExample
+VAR
+    pointerToNumber : POINTER TO INT;
+    number : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// This code causes a page fault
+number := pointerToNumber^;
+
+// This code doesn't cause a page fault
+IF pointerToNumber <> 0 THEN
+    number := pointerToNumber^;
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

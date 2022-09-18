@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="InterfaceExample" Id="{1994f933-8daf-4ec8-94e9-8bce83d78f93}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM InterfaceExample
+VAR
+    number : INT;
+    someInterface : I_Interface;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//// This code causes a page fault
+//number := someInterface.SomeProperty;
+
+// This code doesn't cause a page fault
+IF someInterface <> 0 THEN
+    number := someInterface.SomeProperty;
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
