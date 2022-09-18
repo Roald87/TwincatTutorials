@@ -1,0 +1,18 @@
+{
+    "historizedSymbolList": {
+        "PLC1.MAIN.oven.targetTemperature": {
+            "interval": "PT0.2S",
+            "maxEntries": 10000,
+            "recordingEnabled": true,
+            "rowLimit": 10000
+        },
+        "PLC1.MAIN.oven.thermoCouple_Celcius": {
+            "interval": "PT0.2S",
+            "maxEntries": 10000,
+            "recordingEnabled": true,
+            "rowLimit": 10000
+        }
+    },
+    "inMemory": false,
+    "mode": 3
+}

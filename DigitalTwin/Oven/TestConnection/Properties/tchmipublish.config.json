@@ -1,0 +1,56 @@
+﻿[
+  {
+    "serverExtensions": [
+      {
+        "publishServerExtension": true,
+        "name": "ADS"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiLua"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiSqliteLogger"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiSrv"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiUserManagement"
+      }
+    ],
+    "isNew": false,
+    "profileName": "vm",
+    "publishMode": "TcHmi",
+    "targetDirectory": "",
+    "server": "",
+    "sitePath": "",
+    "destinationUrl": "",
+    "passiveMode": true,
+    "savePassword": true,
+    "deleteAllFilesBeforePublish": false,
+    "deleteExtensionDataBeforePublish": false,
+    "alwaysPublishLocalServerConfiguration": true,
+    "temporaryPublishWithoutServerConfiguration": false,
+    "abortOnErrors": true,
+    "userName": "",
+    "encryptedPassword": "",
+    "encryptedTcHmiServerPassword": "JnDc1XJ2d+57mw+asWOyZw==",
+    "tcHmiServerHost": "192.168.126.132",
+    "tcHmiServerPort": "1020",
+    "socketTimeout": "60",
+    "clientCertificateCN": "",
+    "tcHmiUseTLS": true,
+    "useClientCertificate": false,
+    "launchBrowserAfterPublish": true,
+    "createVirtualDirectoriesOnTargetSystem": false,
+    "tcHmiServerUserName": "__SystemAdministrator",
+    "tcHmiDestinationUrl": "https://192.168.126.132:1020",
+    "publishConfiguration": "remote",
+    "tcHmiSavePassword": true,
+    "tcHmiIgnoreCertificateErrors": true
+  }
+]

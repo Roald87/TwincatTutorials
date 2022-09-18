@@ -1,0 +1,352 @@
+﻿/**
+* About font inclusion in TcHmi
+*
+* As a default we include Roboto Condensed (in Fonts folder) as a webfont which will render latin, greek, vietnamese, cyrillic glyphs.
+*
+* If Roboto does not render the glyphs we use some preinstalled fallback
+* 'Microsoft YaHei' (Windows), 'Hiragino Sans GB' (macOS/iOS), 'Noto Sans CJK SC/TC' (Android), 'WenQuanYi Micro Hei' (Linux) renders chinese
+* 'Meiryo' (Windows), 'Hiragino Kaku Gothic Pro' (macOS/iOS), 'Noto Sans CJK JP' (Android) renders japanese
+*
+* For other fonts you can add the woff files into the TcHmi project and
+* add a @font-face section yourself.
+* The noto family from Google tries to cover all of the world, is free to use and fits nicely with Roboto
+* see https://fonts.google.com/noto and https://fonts.google.com/earlyaccess
+*
+* The font usage is defined in the main CSS file of the active theme (for example Themes/Base/Style.css).
+*/
+html {
+  font-family: RobotoCondensed, "Microsoft YaHei", "微软雅黑",
+    "Hiragino Sans GB", "冬青黑体", "STXihei", "华文细黑", "WenQuanYi Micro Hei",
+    "Meiryo", "メイリオ", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN",
+    "Noto Sans CJK SC", "Noto Sans CJK TC", "Noto Sans CJK JP",
+    "Noto Sans CJK KR", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+  height: 100%;
+}
+
+/* Is defined in html tag of runtime html only. */
+.tchmi-html-runtime {
+}
+
+/* Is defined in body tag of runtime html only. */
+.tchmi-body-runtime {
+}
+
+/*  Views */
+div[data-tchmi-type="TcHmi.Controls.System.TcHmiView"] {
+  background-image: url(Images/Background.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/**
+ * Splash Screen Dialog
+ */
+#tchmi-splash-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(Images/Background.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: auto;
+  display: flex;
+}
+
+@media screen and (min-width: 800px) {
+  @media screen and (min-height: 600px) {
+    #tchmi-splash-container .tchmi-splash-content-container {
+      font-size: x-large;
+      width: 800px;
+      height: 600px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+      overflow: hidden;
+      background: url("Images/Splash-800x600.png");
+      box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress-container {
+      position: absolute;
+      left: 362px;
+      top: 395px;
+      right: 0px;
+      bottom: 0px;
+      width: 412px;
+      background: #ccc;
+      height: 23px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress {
+      width: 0%;
+      height: 100%;
+      background: #7493cc;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-info {
+      position: absolute;
+      left: 362px;
+      top: 418px;
+      right: 0px;
+      bottom: 0px;
+      width: 412px;
+      height: 23px;
+      font-size: 14px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-version-info {
+      position: absolute;
+      left: 5px;
+      top: 580px;
+      right: 0px;
+      bottom: 0px;
+      width: 412px;
+      height: 20px;
+      font-size: 12px;
+    }
+  }
+
+  @media not screen and (min-height: 600px) {
+    #tchmi-splash-container .tchmi-splash-content-container {
+      font-size: x-large;
+      width: 420px;
+      height: 200px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+      overflow: hidden;
+      background: url("Images/Splash-420x200.png");
+      box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress-container {
+      position: absolute;
+      left: 160px;
+      top: 105px;
+      right: 0px;
+      bottom: 0px;
+      width: 240px;
+      background: #ccc;
+      height: 10px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress {
+      width: 0%;
+      height: 100%;
+      background: #7493cc;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-info {
+      position: absolute;
+      left: 160px;
+      top: 115px;
+      right: 0px;
+      bottom: 0px;
+      width: 412px;
+      height: 23px;
+      font-size: 12px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-version-info {
+      position: absolute;
+      left: 5px;
+      top: 183px;
+      right: 0px;
+      bottom: 0px;
+      width: 412px;
+      height: 20px;
+      font-size: 10px;
+    }
+  }
+}
+
+@media not screen and (min-width: 800px) {
+  @media screen and (min-height: 534px) {
+    #tchmi-splash-container .tchmi-splash-content-container {
+      font-size: x-large;
+      width: 320px;
+      height: 534px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+      overflow: hidden;
+      background: url("Images/Splash-320x534.png");
+      box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress-container {
+      position: absolute;
+      left: 17px;
+      top: 455px;
+      right: 0px;
+      bottom: 0px;
+      width: 283px;
+      background: #ccc;
+      height: 20px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress {
+      width: 0%;
+      height: 100%;
+      background: #7493cc;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-info {
+      position: absolute;
+      left: 17px;
+      top: 476px;
+      right: 0px;
+      bottom: 0px;
+      width: 283px;
+      height: 14px;
+      font-size: 12px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-version-info {
+      position: absolute;
+      left: 5px;
+      top: 518px;
+      right: 0px;
+      bottom: 0px;
+      width: 283px;
+      height: 20px;
+      font-size: 10px;
+    }
+  }
+
+  @media not screen and (min-height: 534px) {
+    #tchmi-splash-container .tchmi-splash-content-container {
+      font-size: x-large;
+      width: 420px;
+      height: 200px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+      overflow: hidden;
+      background: url("Images/Splash-420x200.png");
+      box-shadow: 0 0 12px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress-container {
+      position: absolute;
+      left: 160px;
+      top: 105px;
+      right: 0px;
+      bottom: 0px;
+      width: 240px;
+      background: #ccc;
+      height: 10px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-progress {
+      width: 0%;
+      height: 100%;
+      background: #7493cc;
+    }
+
+    #tchmi-splash-container .tchmi-splash-stage-info {
+      position: absolute;
+      left: 160px;
+      top: 115px;
+      right: 0px;
+      bottom: 0px;
+      width: 412px;
+      height: 23px;
+      font-size: 12px;
+    }
+
+    #tchmi-splash-container .tchmi-splash-version-info {
+      position: absolute;
+      left: 5px;
+      top: 183px;
+      right: 0px;
+      bottom: 0px;
+      width: 412px;
+      height: 20px;
+      font-size: 10px;
+    }
+  }
+}
+
+/**
+* View Loading Spinner
+* Usage: <div class="tchmi-view-loading-spinner-container"><div class="tchmi-view-loading-spinner"><div></div><div></div><div></div><div></div></div></div>
+*/
+:root {
+  --tchmi-view-loading-spinner-color: #4c6374;
+}
+
+@keyframes tchmi-view-loading-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tchmi-view-loading-spinner-container {
+  display: none; /** DEBUG ONLY */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tchmi-view-loading-spinner {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.tchmi-view-loading-spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid var(--tchmi-view-loading-spinner-color);
+  border-radius: 50%;
+  animation: tchmi-view-loading-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1)
+    infinite;
+  border-color: var(--tchmi-view-loading-spinner-color) transparent transparent
+    transparent;
+}
+
+.tchmi-view-loading-spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.tchmi-view-loading-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.tchmi-view-loading-spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}

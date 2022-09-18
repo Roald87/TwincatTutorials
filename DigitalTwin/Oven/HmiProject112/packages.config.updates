@@ -1,0 +1,14 @@
+﻿[
+  {
+    "id": "Beckhoff.TwinCAT.HMI.Framework",
+    "version": "12.756.1"
+  },
+  {
+    "id": "Beckhoff.TwinCAT.HMI.Functions",
+    "version": "12.756.1"
+  },
+  {
+    "id": "Beckhoff.TwinCAT.HMI.Controls",
+    "version": "12.756.1"
+  }
+]

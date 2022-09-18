@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "http://json.schemastore.org/eslintrc",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-dupe-args": "error",
+    "no-dupe-else-if": "error",
+    "no-duplicate-case": "warn",
+    "no-redeclare": "error",
+    "no-unexpected-multiline": "error",
+    "use-isnan": "error"
+  },
+  "overrides": [
+    {
+      "files": [ "*.ts", "*.tsx" ],
+      "rules": {
+
+      }
+    }
+  ]
+}

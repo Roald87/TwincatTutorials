@@ -1,13 +1,13 @@
 ﻿{
-  "$schema": "C:/TwinCAT/Functions/TE2000-HMI-Engineering/Infrastructure/TcHmiFramework/Latest/Schema/TchmiConfig.Schema.json",
-  "basePath": "./Libraries",
-  "locale": "client",
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.754.4/runtimes/native1.12-tchmi/Schema/TchmiConfig.Schema.json",
+  "basePath": "./framework",
   "scaleMode": "None",
   "startupView": "Desktop.view",
-  "loginPage": null,
+  "loginPage": "",
   "tcHmiServer": {
     "websocketIntervalTime": 500,
     "websocketTimeout": 10000,
+    "websocketSystemTimeout": 0,
     "websocketSubscriptionMode": "Change"
   },
   "activeTheme": "Base",
@@ -21,6 +21,11 @@
         },
         {
           "name": "Themes/Base/Style.css",
+          "description": "",
+          "type": "Stylesheet"
+        },
+        {
+          "name": "Themes/Base/BaseStyle.css",
           "description": "",
           "type": "Stylesheet"
         }
@@ -40,7 +45,9 @@
   "views": [
     {
       "url": "Desktop.view",
-      "preload": false
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
     }
   ],
   "userFunctions": [],
@@ -50,13 +57,40 @@
   "trigger": [],
   "actionTemplates": [],
   "languages": {
-    "de-DE": "Localization\\de-DE.localization",
-    "en-US": "Localization\\en-US.localization"
+    "de-DE": "Localization/de-DE.localization",
+    "en-US": "Localization/en-US.localization"
   },
+  "languageFallback": "",
+  "disableLoadingOptimization": false,
   "creatorSettings": {
     "viewport": {
       "defaultWidth": 1024,
       "defaultHeight": 768
     }
-  }
+  },
+  "binding": {
+    "symbolError": "Ignore"
+  },
+  "packages": [
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Controls",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Controls"
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Framework",
+      "basePath": "/framework"
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Functions",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Functions"
+    }
+  ],
+  "keyboardLayouts": [
+    {
+      "url": "KeyboardLayouts/German - compact.keyboard.json"
+    },
+    {
+      "url": "KeyboardLayouts/US - compact.keyboard.json"
+    }
+  ]
 }

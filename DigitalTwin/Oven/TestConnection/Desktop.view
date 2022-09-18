@@ -1,0 +1,31 @@
+﻿<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-unit="%" data-tchmi-width="100" data-tchmi-height-unit="%" data-tchmi-height="100" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width="100" data-tchmi-background-image-height="100">
+
+<div id="Region_Center" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-left="0" data-tchmi-top="%ctrl%Header_Top::Height%/ctrl%" data-tchmi-scrolling="Yes" data-tchmi-bottom="0" data-tchmi-right="%ctrl%Navigation_Right::Width%/ctrl%">
+
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json"></script></div><script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+{
+ "event": "%ctrl%Desktop::RenderedWidth%/ctrl%",
+"actions": [
+{
+"objectType": "Function",
+"active": true,
+"fn": "TcHmiResponsiveBehaviour",
+"fnParams": [
+{
+"objectType": "Symbol",
+"valueType": "tchmi:general#/definitions/String",
+"symbolExpression": "%i%MediaQueryList%/i%"
+},
+{
+"objectType": "Symbol",
+"valueType": "tchmi:general#/definitions/String",
+"symbolExpression": "%i%AffectedControls%/i%"
+}
+],
+"asyncWait": true
+}
+]
+}
+]
+</script></div>

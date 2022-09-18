@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "C:/TwinCAT/Functions/TE2000-HMI-Engineering/Infrastructure/TcHmiFramework/Latest/Schema/TchmiConfig.Schema.json",
-  "basePath": "./Libraries",
+  "basePath": "./framework",
   "locale": "client",
   "scaleMode": "None",
   "startupView": "Desktop.view",
@@ -22,6 +22,11 @@
         {
           "name": "Themes/Base/Style.css",
           "description": "",
+          "type": "Stylesheet"
+        },
+        {
+          "name": "Themes/Base/BaseStyle.css",
+          "description": "Theme Stylesheet",
           "type": "Stylesheet"
         }
       ],

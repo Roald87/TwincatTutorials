@@ -1,0 +1,33 @@
+﻿{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "none",
+    "target": "es6",
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "scripthost",
+      "es6",
+      "es2017.intl"
+    ],
+    "types": [],
+    "declaration": true,
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false,
+    "alwaysStrict": false
+  },
+  "exclude": [
+    "$(Output).Path/"
+  ],
+  "include": [
+    "$(Beckhoff.TwinCAT.HMI.Framework).InstallPath/TcHmi.d.ts"
+  ]
+}

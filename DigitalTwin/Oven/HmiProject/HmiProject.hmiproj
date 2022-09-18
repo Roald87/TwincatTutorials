@@ -1,21 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Clean;Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <TcHmiDirectory>$(registry:HKEY_LOCAL_MACHINE\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
     <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Wow6432Node\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
     <AvailablePlatforms>TwinCAT HMI</AvailablePlatforms>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <TcHmiCreatorVersion>(1.5,1.10]</TcHmiCreatorVersion>
     <HmiTitle>Please enter your Title...</HmiTitle>
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
     <Name>HmiProject</Name>
     <HmiCommunicationRouterPort>10101</HmiCommunicationRouterPort>
-    <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
     <HmiCommunicationServerPort>3000</HmiCommunicationServerPort>
     <HmiInitial>1.10.1336.404</HmiInitial>
-    <HmiRecent>1.10.1336.404</HmiRecent>
+    <HmiRecent>1.12.754.4</HmiRecent>
+    <TargetFrameworkMoniker>native,Version=v1.12.0,Profile=tchmi</TargetFrameworkMoniker>
+    <TargetFramework>native1.12-tchmi</TargetFramework>
+    <HmiLogTcHmiServerMessages>false</HmiLogTcHmiServerMessages>
+    <HmiLogDesignerModeComMessages>false</HmiLogDesignerModeComMessages>
+    <HmiUseX64>True</HmiUseX64>
+    <HmiServerVersion>Latest</HmiServerVersion>
+    <EnableTypeScript>true</EnableTypeScript>
+    <HmiCommunicationServerAuthPort>13000</HmiCommunicationServerAuthPort>
+    <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>
   </PropertyGroup>
   <PropertyGroup>
     <TwinCATHmi_Tasks>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.tasks</TwinCATHmi_Tasks>
@@ -72,25 +81,113 @@
 		</BuildDependsOn>
   </PropertyGroup>
   <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />
-  <Target Name="CoreBuild">
-    <TcHmiMSBuild.Publish.TcHmiBuild TaskAction="Clean" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" />
-    <TcHmiMSBuild.Publish.TcHmiBuild TaskAction="Build" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" References="@(TcHmiReference)" />
-    <TcHmiMSBuild.Publish.TcHmiGenerator TaskAction="EntryPage" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" TcHmiServerAddress="$(TcHmi_ServerAddress)" TcHmiServerPort="$(TcHmi_ServerPort)">
-      <Output TaskParameter="Result" PropertyName="TaskResult0" />
-    </TcHmiMSBuild.Publish.TcHmiGenerator>
-    <Message Text="Generating the Default.html within OutputPath('$(OutputPath)'): $(TaskResult0)" />
-  </Target>
+  <Target Name="CoreBuild" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
-    <Folder Include=".hmipkgs" />
-    <Folder Include="Libraries" />
+    <Content Include="KeyboardLayouts\German - compact.keyboard.json" />
+    <Content Include="KeyboardLayouts\US - compact.keyboard.json" />
+    <Content Include="packages.config" />
+    <Content Include="packages.xsd">
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\ADS\ADS.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiRecipeManagement\TcHmiRecipeManagement.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiRecipeManagement\TcHmiRecipeManagement.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiRecipeManagement\TcHmiRecipeManagement.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteHistorize\TcHmiSqliteHistorize.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteHistorize\TcHmiSqliteHistorize.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteHistorize\TcHmiSqliteHistorize.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\Base\BaseStyle.css">
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-320x534.png">
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-420x200.png">
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-800x600.png">
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="tsconfig.json">
+      <DependentUpon>tsconfig.tpl.json</DependentUpon>
+    </Content>
+    <Content Include="tsconfig.tpl.json">
+      <Visible>true</Visible>
+    </Content>
     <Folder Include="Images" />
     <Folder Include="Images\Manifest" />
     <Folder Include="Imports" />
     <Folder Include="Imports\Images" />
     <Folder Include="Imports\Videos" />
     <Folder Include="Localization" />
+    <Folder Include="Server\ADS\" />
     <Folder Include="Server\Extensions\ADS" />
     <Folder Include="Server\Extensions\TcHmiEventLogger" />
     <Folder Include="Server\Extensions\TcHmiLua" />
@@ -100,13 +197,20 @@
     <Folder Include="Server\Extensions\TcHmiSrv" />
     <Folder Include="Server\Extensions\TcHmiTextStorage" />
     <Folder Include="Server\Extensions\TcHmiUserManagement" />
+    <Folder Include="Server\TcHmiEventLogger\" />
+    <Folder Include="Server\TcHmiLua\" />
+    <Folder Include="Server\TcHmiRecipeManagement\" />
+    <Folder Include="Server\TcHmiSqliteHistorize\" />
+    <Folder Include="Server\TcHmiSqliteLogger\" />
+    <Folder Include="Server\TcHmiSrv\" />
+    <Folder Include="Server\TcHmiTextStorage" />
+    <Folder Include="Server\TcHmiUserManagement\" />
     <Folder Include="Themes" />
     <Folder Include="Themes\Base\" />
     <Folder Include="Fonts" />
     <Folder Include="Server">
       <WorkingDirectory>HmiProject</WorkingDirectory>
     </Folder>
-    <Folder Include="Server\Extensions" />
     <Content Include=".tfignore">
       <SubType>Content</SubType>
       <Visible>false</Visible>
@@ -114,10 +218,6 @@
     <Content Include=".gitignore">
       <SubType>Content</SubType>
       <Visible>false</Visible>
-    </Content>
-    <Content Include=".hmipkgs\packages.hmipkgs">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
     </Content>
     <Content Include="FavIcon.ico">
       <SubType>Content</SubType>
@@ -218,6 +318,7 @@
     <Content Include="Localization\de-DE.localization">
       <SubType>Content</SubType>
       <Visible>true</Visible>
+      <DependentUpon>Localization\de-DE.tpl.localization</DependentUpon>
     </Content>
     <Content Include="Localization\de-DE.tpl.localization">
       <SubType>Content</SubType>
@@ -226,6 +327,7 @@
     <Content Include="Localization\en-US.localization">
       <SubType>Content</SubType>
       <Visible>true</Visible>
+      <DependentUpon>Localization\en-US.tpl.localization</DependentUpon>
     </Content>
     <Content Include="Localization\en-US.tpl.localization">
       <SubType>Content</SubType>
@@ -264,10 +366,6 @@
       <Visible>true</Visible>
     </Content>
     <Folder Include="Properties" />
-    <Content Include="Properties\tchmiconfig.tpl.json">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
     <Content Include="Properties\tchmiconfig.json">
       <SubType>Content</SubType>
       <Visible>true</Visible>
@@ -279,6 +377,7 @@
     <Content Include="Properties\tchmi.framework.Schema.json">
       <SubType>Content</SubType>
       <Visible>true</Visible>
+      <DependentUpon>Properties\tchmi.framework.Schema.tpl.json</DependentUpon>
     </Content>
     <Content Include="Properties\tchmi.project.Schema.tpl.json">
       <SubType>Content</SubType>
@@ -287,6 +386,7 @@
     <Content Include="Properties\tchmi.project.Schema.json">
       <SubType>Content</SubType>
       <Visible>true</Visible>
+      <DependentUpon>Properties\tchmi.project.Schema.tpl.json</DependentUpon>
     </Content>
     <Content Include="Properties\tchmipublish.config.json">
       <SubType>Content</SubType>

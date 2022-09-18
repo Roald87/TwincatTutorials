@@ -1,0 +1,178 @@
+﻿{
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.754.4/runtimes/native1.12-tchmi/Schema/TchmiConfig.Schema.json",
+  "basePath": "./framework",
+  "scaleMode": "None",
+  "startupView": "Desktop.view",
+  "loginPage": "/Pages/LoginPage.html",
+  "tcHmiServer": {
+    "websocketIntervalTime": 500,
+    "websocketTimeout": 20000,
+    "websocketSystemTimeout": 60000,
+    "websocketSubscriptionMode": "Change"
+  },
+  "activeTheme": "Base",
+  "themes": {
+    "Base-Dark": {
+      "resources": [
+        {
+          "name": "Themes/Base-Dark/Base-DarkStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        },
+        {
+          "name": "Themes/Base-Dark/Base-Dark.theme",
+          "description": "",
+          "type": "ThemedValues"
+        }
+      ],
+      "replacesThemeForControls": []
+    },
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Base.theme",
+          "description": "",
+          "type": "ThemedValues"
+        },
+        {
+          "name": "Themes/Base/BaseStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        }
+      ],
+      "replacesThemeForControls": []
+    }
+  },
+  "dependencyFiles": [
+    {
+      "name": "Fonts/Fonts.css",
+      "description": "",
+      "type": "Stylesheet"
+    }
+  ],
+  "userControls": [],
+  "content": [
+    {
+      "url": "Pages/Events.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Pages/Settings.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Pages/StartPage.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    }
+  ],
+  "views": [
+    {
+      "url": "Desktop.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    }
+  ],
+  "userFunctions": [],
+  "symbols": {
+    "internal": {
+      "MediaQueryList": {
+        "value": [
+          {
+            "name": "Mobile",
+            "maxWidth": 800,
+            "minWidth": 0,
+            "controlBehaviourList": [
+              {
+                "controlType": "TcHmi.Controls.BaseTemplate.TcHmiNavigation",
+                "controlID": "Navigation_Right",
+                "displayOption": "burger_top"
+              }
+            ]
+          },
+          {
+            "name": "Tablet",
+            "maxWidth": 1280,
+            "minWidth": 800,
+            "controlBehaviourList": [
+              {
+                "controlType": "TcHmi.Controls.BaseTemplate.TcHmiNavigation",
+                "controlID": "Navigation_Right",
+                "displayOption": "icons"
+              }
+            ]
+          },
+          {
+            "name": "Desktop",
+            "maxWidth": 1920,
+            "minWidth": 1280,
+            "controlBehaviourList": [
+              {
+                "controlType": "TcHmi.Controls.BaseTemplate.TcHmiNavigation",
+                "controlID": "Navigation_Right",
+                "displayOption": "full"
+              }
+            ]
+          }
+        ],
+        "type": "tchmi:framework#/definitions/TcHmi.Functions.BaseTemplate.MediaQueryList",
+        "persist": true,
+        "readonly": true
+      },
+      "AffectedControls": {
+        "value": [
+          null,
+          null,
+          {
+            "controlID": "Region_Center",
+            "position": "Center",
+            "defaultHeight": null,
+            "defaultWidth": null,
+            "defaultTop": "%ctrl%Header_Top::Height%/ctrl%",
+            "defaultBottom": "0",
+            "defaultLeft": "0",
+            "defaultRight": "%ctrl%Navigation_Right::Width%/ctrl%"
+          }
+        ],
+        "type": "tchmi:framework#/definitions/TcHmi.Functions.BaseTemplate.AffectedControlList",
+        "persist": true,
+        "readonly": true
+      }
+    }
+  },
+  "trigger": [],
+  "actionTemplates": [],
+  "languages": {
+    "de-DE": "Localization/de-DE.localization",
+    "en-US": "Localization/en-US.localization"
+  },
+  "languageFallback": "",
+  "disableLoadingOptimization": false,
+  "creatorSettings": {
+    "viewport": {
+      "defaultWidth": 1920,
+      "defaultHeight": 1080
+    }
+  },
+  "binding": {
+    "symbolError": "Ignore"
+  },
+  "packages": [],
+  "keyboardLayouts": [
+    {
+      "url": "KeyboardLayouts/German - compact.keyboard.json"
+    },
+    {
+      "url": "KeyboardLayouts/US - compact.keyboard.json"
+    }
+  ]
+}

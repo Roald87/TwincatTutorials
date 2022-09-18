@@ -1,0 +1,398 @@
+﻿<div id="Settings" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-height-mode="Content">
+
+  <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" id="TcHmiTextblock_Settings_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="32" data-tchmi-height-unit="px" data-tchmi-left="32" data-tchmi-left-unit="px" data-tchmi-text="%l%L_Settings%/l%" data-tchmi-top="16" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-right="16">
+
+
+    <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+      [
+      "headline-2"
+      ]
+    </script>
+  </div>
+
+  <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" id="TcHmiGrid_Settings_1" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="720" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-height-mode="Content">
+    <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+      [
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      },
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      },
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      },
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      },
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      },
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      },
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      },
+      {
+      "width": 1.0,
+      "widthUnit": "factor",
+      "widthMode": "Value",
+      "maxWidthUnit": "px",
+      "minWidth": 320.0,
+      "minWidthUnit": "px",
+      "overflow": false
+      }
+      ]
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+      [
+      {
+      "height": 1.0,
+      "heightUnit": "factor",
+      "heightMode": "Value",
+      "maxHeightUnit": "px",
+      "minHeight": 320.0,
+      "minHeightUnit": "px",
+      "overflow": false
+      }
+      ]
+    </script>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" id="TcHmiContainer_Settings_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+      <div id="TcHmiTextblock_Settings_Localization" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="%l%L_Localization%/l%" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="268" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+
+
+        <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+          [
+          "headline-3"
+          ]
+        </script>
+      </div>
+
+      <div id="TcHmiLocalizationSelect_Settings_Localization" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiLocalizationSelect" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="46" data-tchmi-top-unit="px" data-tchmi-width="268" data-tchmi-width-unit="px">
+        <script data-tchmi-target-attribute="data-tchmi-localization-mapping" type="application/json">
+          [
+          {
+          "code": "de-DE",
+          "text": "German (Germany)"
+          },
+          {
+          "code": "en-US",
+          "text": "English (United States)"
+          }
+          ]
+        </script>
+        <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+          {
+          "top": 3,
+          "right": 3,
+          "bottom": 3,
+          "left": 3
+          }
+        </script>
+
+      </div>
+
+    </div>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="1" id="TcHmiContainer_Settings_2" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+      <div id="TcHmiTextblock_Settings_Theme" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="%l%L_Theme%/l%" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="268" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+
+
+        <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+          [
+          "headline-3"
+          ]
+        </script>
+      </div>
+
+      <div id="TcHmiThemeSelect_Settings_Theme" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiThemeSelect" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="46" data-tchmi-top-unit="px" data-tchmi-width="268" data-tchmi-width-unit="px">
+        <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+          {
+          "top": 3,
+          "right": 3,
+          "bottom": 3,
+          "left": 3
+          }
+        </script>
+
+      </div>
+
+    </div>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="2" id="TcHmiContainer_Settings_3" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+    </div>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="3" id="TcHmiContainer_Settings_4" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+    </div>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="5" id="TcHmiContainer_Settings_5" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+    </div>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="6" id="TcHmiContainer_Settings_6" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+    </div>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="7" id="TcHmiContainer_Settings_7" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+    </div>
+
+    <div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="4" id="TcHmiContainer_Settings_8" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+
+
+      <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+        [
+        "background-container"
+        ]
+      </script>
+
+    </div>
+
+
+    <script data-tchmi-target-attribute="data-tchmi-cell-options" type="application/json">
+      [
+      {
+      "columnIndex": 0,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      },
+      {
+      "columnIndex": 1,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      },
+      {
+      "columnIndex": 2,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      },
+      {
+      "columnIndex": 3,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      },
+      {
+      "columnIndex": 4,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      },
+      {
+      "columnIndex": 5,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      },
+      {
+      "columnIndex": 6,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      },
+      {
+      "columnIndex": 7,
+      "rowIndex": 0,
+      "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+      },
+      "backgroundImageWidthUnit": "px",
+      "backgroundImageHeightUnit": "px",
+      "backgroundImageHorizontalAlignment": "Center",
+      "backgroundImageVerticalAlignment": "Center"
+      }
+      ]
+    </script>
+  </div>
+</div>

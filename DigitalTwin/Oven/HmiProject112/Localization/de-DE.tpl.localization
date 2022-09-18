@@ -1,0 +1,8 @@
+﻿{
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.754.4/runtimes/native1.12-tchmi/Schema/LocalizationDescription.Schema.json",
+  "locale": "de-DE",
+  "localizedText": {
+    "Text1": "Hallo Welt!",
+    "Text2": "Ich bin ein lokalisierter Text."
+  }
+}

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Clean;Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <TcHmiDirectory>$(registry:HKEY_LOCAL_MACHINE\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Wow6432Node\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TcHmiDirectory Condition="!Exists('$(TcHmiDirectory)')">C:\TwinCAT\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <AvailablePlatforms>TwinCAT HMI</AvailablePlatforms>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <HmiTitle>Please enter your Title...</HmiTitle>
+    <HmiVerboseLevel>2</HmiVerboseLevel>
+    <HmiVersion>1.0.0.0</HmiVersion>
+    <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
+    <HmiLogTcHmiServerMessages>false</HmiLogTcHmiServerMessages>
+    <HmiLogDesignerModeComMessages>false</HmiLogDesignerModeComMessages>
+    <HmiServerVersion>Latest</HmiServerVersion>
+    <HmiUseX64>True</HmiUseX64>
+    <HmiDefaultLanguage>client</HmiDefaultLanguage>
+    <TargetFrameworkMoniker>native,Version=v1.12.0,Profile=tchmi</TargetFrameworkMoniker>
+    <TargetFramework>native1.12-tchmi</TargetFramework>
+    <EnableTypeScript>true</EnableTypeScript>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
+    <Name>HmiProject112</Name>
+    <HmiCommunicationRouterPort>10100</HmiCommunicationRouterPort>
+    <HmiCommunicationServerAuthPort>13001</HmiCommunicationServerAuthPort>
+    <HmiInitial>1.12.754.4</HmiInitial>
+    <HmiRecent>1.12.754.4</HmiRecent>
+    <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TwinCATHmi_Tasks>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.tasks</TwinCATHmi_Tasks>
+    <TwinCATHmi_Targets>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.targets</TwinCATHmi_Targets>
+  </PropertyGroup>
+  <Import Project="$(TwinCATHmi_Tasks)" />
+  <Import Project="$(TwinCATHmi_Targets)" />
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>c611f392-9651-4941-9c4e-bd93f81829b8</ProjectGuid>
+    <RootNamespace>TwinCAT3HmiProject</RootNamespace>
+    <AssemblyName>TwinCAT3HmiProject</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">TwinCAT HMI</Platform>
+  </PropertyGroup>
+  <!-- Any CPU -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|TwinCAT HMI' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>TwinCAT HMI</PlatformTarget>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
+    <TypeScriptShowVersionWarning>false</TypeScriptShowVersionWarning>
+    <DefaultNamespace>HmiProject112</DefaultNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|TwinCAT HMI' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>TwinCAT HMI</PlatformTarget>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
+    <TypeScriptShowVersionWarning>false</TypeScriptShowVersionWarning>
+    <DefaultNamespace>HmiProject112</DefaultNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\build\Microsoft.TypeScript.targets" Condition="!Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets') And Exists('$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\build\Microsoft.TypeScript.targets')" />
+  <PropertyGroup>
+    <TSJavaScriptFile>$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\tsc.js</TSJavaScriptFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" Condition="'$(RestoreProjectStyle)' == 'PackageReference'" />
+  <PropertyGroup>
+    <PreBuildEventDependsOn />
+  </PropertyGroup>
+  <Target Name="PreBuildEvent" Condition="'$(PreBuildEvent)'!=''" DependsOnTargets="$(PreBuildEventDependsOn)">
+    <Exec WorkingDirectory="$(OutDir)" Command="$(PreBuildEvent)" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEventDependsOn />
+  </PropertyGroup>
+  <Target Name="PostBuildEvent" Condition="'$(PostBuildEvent)' != '' and ('$(RunPostBuildEvent)'=='Always' or '$(RunPostBuildEvent)'=='OnOutputUpdated')" DependsOnTargets="$(PostBuildEventDependsOn)">
+    <Exec WorkingDirectory="$(OutDir)" Command="$(PostBuildEvent)" />
+  </Target>
+  <Target Name="GetFrameworkPaths" />
+  <PropertyGroup>
+    <BuildDependsOn>
+      PreBuildEvent;
+      CoreBuild;
+      PostBuildEvent
+    </BuildDependsOn>
+  </PropertyGroup>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />
+  <PropertyGroup>
+    <TcHmi_ProjectDirectory Condition="'$(TcHmi_ProjectDirectory)' == ''">$(MSBuildProjectDirectory)</TcHmi_ProjectDirectory>
+    <TcHmi_ServerAddress Condition="'$(TcHmi_ServerAddress)' == ''">127.0.0.1</TcHmi_ServerAddress>
+    <TcHmi_ServerPort Condition="'$(TcHmi_ServerPort)' == ''">1010</TcHmi_ServerPort>
+  </PropertyGroup>
+  <Target Name="CoreBuild">
+    <!-- TypeScript START -->
+    <CallTarget Targets="FindConfigFiles" Condition="$(TypeScriptSdkDir) != ''" />
+    <CallTarget Targets="CompileTypeScript" Condition="$(TypeScriptSdkDir) != ''" />
+    <CallTarget Targets="PreComputeCompileTypeScript" Condition="$(TypeScriptSdkDir) != ''" />
+    <CallTarget Targets="PreComputeCompileTypeScriptWithTSConfig" Condition="$(TypeScriptSdkDir) != ''" />
+    <CallTarget Targets="CompileTypeScriptWithTSConfig" Condition="$(TypeScriptSdkDir) != ''" />
+    <CallTarget Targets="GetTypeScriptOutputForPublishing" Condition="$(TypeScriptSdkDir) != ''" />
+    <!-- TypeScript END -->
+    <TcHmiMSBuild.Publish.TcHmiBuild TaskAction="Clean" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" />
+    <TcHmiMSBuild.Publish.TcHmiBuild TaskAction="Build" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" ProjectFiles="@(Content)" VirtualMappings="$(TcHmi_VirtualMappings)" />
+    <TcHmiMSBuild.Publish.TcHmiGenerator TaskAction="EntryPage" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" TcHmiServerAddress="$(TcHmi_ServerAddress)" TcHmiServerPort="$(TcHmi_ServerPort)">
+      <Output TaskParameter="Result" PropertyName="TaskResult0" />
+    </TcHmiMSBuild.Publish.TcHmiGenerator>
+    <Message Text="Generating the Default.html within OutputPath('$(OutputPath)'): $(TaskResult0)" />
+  </Target>
+  <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
+  <Target Name="Clean" DependsOnTargets="BaseClean" />
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+    <Folder Include="Images" />
+    <Folder Include="Images\Manifest" />
+    <Folder Include="Imports" />
+    <Folder Include="Imports\Images" />
+    <Folder Include="Imports\Videos" />
+    <Folder Include="KeyboardLayouts\" />
+    <Folder Include="Localization" />
+    <Folder Include="Themes" />
+    <Folder Include="Themes\Base-Dark\Images\" />
+    <Folder Include="Themes\Base\" />
+    <Folder Include="Themes\Base-Dark\" />
+    <Folder Include="Server">
+      <WorkingDirectory>HmiProject112</WorkingDirectory>
+    </Folder>
+    <Folder Include="Properties" />
+    <Content Include=".eslintrc.json">
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Desktop.view">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="tsconfig.tpl.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="tsconfig.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+      <DependentUpon>tsconfig.tpl.json</DependentUpon>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="packages.xsd">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Properties\tchmiconfig.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmi.framework.Schema.tpl.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmi.framework.Schema.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+      <DependentUpon>Properties\tchmi.framework.Schema.tpl.json</DependentUpon>
+    </Content>
+    <Content Include="Properties\tchmi.project.Schema.tpl.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmi.project.Schema.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+      <DependentUpon>Properties\tchmi.project.Schema.tpl.json</DependentUpon>
+    </Content>
+    <Content Include="Properties\tchmipublish.config.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmimanifest.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\Default.tpl">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include=".tfignore">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include=".gitignore">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Fonts\Fonts.css">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Fonts\Roboto-Condensed-webfont.woff">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Base.theme">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\BaseStyle.css">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-320x534.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-420x200.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-800x600.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Background.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Base-Dark.theme">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Base-DarkStyle.css">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Images\Splash-320x534.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Images\Splash-420x200.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Images\Splash-800x600.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Images\Background.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Localization\de-DE.tpl.localization">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Localization\en-US.tpl.localization">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Localization\de-DE.localization">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+      <DependentUpon>Localization\de-DE.tpl.localization</DependentUpon>
+    </Content>
+    <Content Include="Localization\en-US.localization">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+      <DependentUpon>Localization\en-US.tpl.localization</DependentUpon>
+    </Content>
+    <Content Include="KeyboardLayouts\German - compact.keyboard.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="KeyboardLayouts\US - compact.keyboard.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Favicon.ico">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Beckhoff_Logo.svg">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-0-75x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-1-5x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-1x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-2x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-3x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-4x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Folder Include="Server\ADS\" />
+    <Folder Include="Server\TcHmiLua\" />
+    <Folder Include="Server\TcHmiSqliteLogger\" />
+    <Folder Include="Server\TcHmiSrv\" />
+    <Folder Include="Server\TcHmiUserManagement\" />
+    <Content Include="Server\ADS\ADS.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.remote.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Storage.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.default.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.remote.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Storage.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.default.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.remote.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Storage.json">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Folder Include="Themes\Base\Images\" />
+  </ItemGroup>
+</Project>
